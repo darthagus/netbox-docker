@@ -34,9 +34,9 @@ services:
       test: "ps -aux | grep -v grep | grep -q rqworker || exit 1"
   netbox-housekeeping:
     <<: *netbox
-    depends_on:
-      netbox:
-        condition: service_healthy
+#    depends_on:
+#      netbox:
+#        condition: service_healthy
     command:
     - /opt/netbox/housekeeping.sh
     healthcheck:
