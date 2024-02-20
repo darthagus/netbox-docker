@@ -21,7 +21,7 @@ services:
   netbox-worker:
     <<: *netbox
     depends_on:
-      netbox:
+      - netbox:
         condition: service_healthy
     command:
     - /opt/netbox/venv/bin/python
