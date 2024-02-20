@@ -35,8 +35,8 @@ services:
   netbox-housekeeping:
     <<: *netbox
     depends_on:
-      - netbox:
-          condition: service_healthy
+      netbox:
+        condition: service_healthy
     command:
     - /opt/netbox/housekeeping.sh
     healthcheck:
