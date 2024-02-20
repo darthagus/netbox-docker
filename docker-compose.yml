@@ -20,9 +20,9 @@ services:
     - netbox-scripts-files:/opt/netbox/netbox/scripts:rw
   netbox-worker:
     <<: *netbox
-    depends_on:
-      netbox:
-        condition: service_healthy
+#    depends_on:
+#      netbox:
+#        condition: service_healthy
     command:
     - /opt/netbox/venv/bin/python
     - /opt/netbox/netbox/manage.py
